@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-namespace CoreAPI\Client\Domain;
+namespace CoreAPI\Client\Domain\Entities;
 
 use CoreAPI\Client\Domain\ValueObjects\ClientName;
+use CoreAPI\SharedKernel\Aggregate\AggregateRoot;
 
-final class Client
+final class Client extends AggregateRoot
 {
     private $id;
     private $name;
@@ -27,6 +28,7 @@ final class Client
     ): Client {
         $client = new self($name);
 
+        
         return $client;
     }
 }

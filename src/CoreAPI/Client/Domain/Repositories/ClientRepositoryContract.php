@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace CoreAPI\Client\Domain\Contracts;
+namespace CoreAPI\Client\Domain\Repositories;
 
 use CoreAPI\Client\Domain\Client;
 use CoreAPI\Client\Domain\ValueObjects\ClientId;
 use CoreAPI\Client\Domain\ValueObjects\ClientName;
 
-interface ClientRepositoryContract
+interface ClientRepositoryInterface
 {
     public function find(ClientId $id): ?Client;
 
