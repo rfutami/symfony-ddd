@@ -7,11 +7,16 @@ namespace CoreAPI\Client\Application;
 use CoreAPI\Client\Domain\Entities\Client;
 use CoreAPI\Client\Domain\ValueObjects\ClientId;
 use CoreAPI\Client\Domain\Repositories\ClientRepositoryInterface;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-final class GetClientUseCase {
+#[Route('/client_hola/{client_id}', name:'client_hola', methods: ['GET'])]
+final class GetClientController extends AbstractController
+{
     private $repository;
 
-    public function __construct(ClientRepositoryInterface $repository) {
+    public function __construct(ClientRepositoryInterface $repository)
+    {
         $this->repository = $repository;
     }
 

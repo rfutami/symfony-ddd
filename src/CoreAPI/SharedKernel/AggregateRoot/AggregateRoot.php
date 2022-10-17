@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CoreAPI\SharedKernel\Aggregate;
+namespace CoreAPI\SharedKernel\AggregateRoot;
 
 use CoreAPI\SharedKernel\Event\DomainEventInterface;
 

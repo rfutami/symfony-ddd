@@ -1,7 +1,9 @@
 controllers:
     resource: ../src/Controller/
     type: annotation
-
+client_hola:
+  resource: ../src/CoreAPI/Client/Application/
+  type: annotation
 kernel:
     resource: ../src/Kernel.php
     type: annotation
