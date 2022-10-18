@@ -14,7 +14,7 @@ doctrine:
                 is_bundle: false
                 type: xml
                 dir: '%kernel.project_dir%/src/CoreAPI/Client/Infrastructure/DoctrineMappings'
-                prefix: 'CoreAPI\Client\Domain\Entities'
+                prefix: 'App\CoreAPI\Client\Domain\Entities'
                 alias: Client
 
 when@test:

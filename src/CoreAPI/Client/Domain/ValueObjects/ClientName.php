@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CoreAPI\Client\Domain\ValueObjects;
+namespace App\CoreAPI\Client\Domain\ValueObjects;
 
 final class ClientName
 {
@@ -12,7 +12,7 @@ final class ClientName
         $this->value = $name;
     }
 
-    public function ivalue(): string
+    public function value(): string
     {
         return $this->value;
     }

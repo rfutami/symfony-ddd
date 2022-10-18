@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace CoreAPI\Client\Domain\Repositories;
+namespace App\CoreAPI\Client\Domain\Repositories;
 
-use CoreAPI\Client\Domain\Entities\Client;
-use CoreAPI\Client\Domain\ValueObjects\ClientId;
-use CoreAPI\Client\Domain\ValueObjects\ClientName;
+use App\CoreAPI\Client\Domain\Entities\Client;
+use App\CoreAPI\Client\Domain\ValueObjects\ClientId;
+use App\CoreAPI\Client\Domain\ValueObjects\ClientName;
 
 interface ClientRepositoryInterface
 {

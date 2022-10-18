@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-namespace CoreAPI\Client\Domain\Entities;
+namespace App\CoreAPI\Client\Domain\Entities;
 
-use CoreAPI\Client\Domain\ValueObjects\ClientName;
-use CoreAPI\SharedKernel\AggregateRoot\AggregateRoot;
+use App\CoreAPI\Client\Domain\ValueObjects\ClientName;
+use App\CoreAPI\Client\Domain\ValueObjects\ClientId;
+use App\CoreAPI\SharedKernel\AggregateRoot\AggregateRoot;
 
 final class Client extends AggregateRoot
 {
@@ -13,21 +14,28 @@ final class Client extends AggregateRoot
     private $name;
 
     public function __construct(
+        ClientId $id,
         ClientName $name
     ) {
-        $this->name = $name;
+        $this->id = $id->value();
+        $this->name = $name->value();
+    }
+
+    public function id(): ClientId
+    {
+        return new ClientId($this->id);
     }
 
     public function name(): ClientName
     {
-        return $this->name;
+        return new ClientName($this->name);
     }
 
     public static function create(
+        ClientId $id,
         ClientName $name
     ): Client {
-        $client = new self($name);
-
+        $client = new self($id, $name);
         
         return $client;
     }

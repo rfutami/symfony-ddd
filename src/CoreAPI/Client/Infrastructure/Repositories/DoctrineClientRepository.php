@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace CoreAPI\Client\Infrastructure\Repositories;
+namespace App\CoreAPI\Client\Infrastructure\Repositories;
 
-use CoreAPI\Client\Domain\Entities\Client;
-use CoreAPI\Client\Domain\Repositories\ClientRepositoryInterface;
-use CoreAPI\Client\Domain\ValueObjects\ClientId;
-use CoreAPI\Client\Domain\ValueObjects\ClientName;
+use App\CoreAPI\Client\Domain\Entities\Client;
+use App\CoreAPI\Client\Domain\Repositories\ClientRepositoryInterface;
+use App\CoreAPI\Client\Domain\ValueObjects\ClientId;
+use App\CoreAPI\Client\Domain\ValueObjects\ClientName;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

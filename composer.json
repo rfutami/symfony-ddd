@@ -33,8 +33,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/",
-            "CoreAPI\\": "src/CoreAPI/"
+            "App\\": "src/"
         }
     },
     "autoload-dev": {

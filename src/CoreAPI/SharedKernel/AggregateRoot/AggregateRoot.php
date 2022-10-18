@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace CoreAPI\SharedKernel\AggregateRoot;
+namespace App\CoreAPI\SharedKernel\AggregateRoot;
 
-use CoreAPI\SharedKernel\Event\DomainEventInterface;
+use App\CoreAPI\SharedKernel\Event\DomainEventInterface;
 
 abstract class AggregateRoot
 {

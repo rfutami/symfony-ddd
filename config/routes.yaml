@@ -1,7 +1,7 @@
 controllers:
     resource: ../src/Controller/
     type: annotation
-client_hola:
+client:
   resource: ../src/CoreAPI/Client/Application/
   type: annotation
 kernel:

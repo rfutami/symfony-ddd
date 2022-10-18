@@ -4,7 +4,7 @@
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                           https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-    <entity name="CoreAPI\Client\Domain\Entities\Client" table="client" repository-class="CoreAPI\Client\Infrastructure\Repositories\DoctrineClientRepository">
+    <entity name="App\CoreAPI\Client\Domain\Entities\Client" table="client" repository-class="App\CoreAPI\Client\Infrastructure\Repositories\DoctrineClientRepository">
         <id name="id" type="integer" column="id">
             <generator strategy="IDENTITY"/>
         </id>
