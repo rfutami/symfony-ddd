@@ -2,18 +2,29 @@
 
 declare(strict_types=1);
 
-namespace CoreAPI\Client\Infrastrcture\Repositories;
+namespace CoreAPI\Client\Infrastructure\Repositories;
 
-use CoreAPI\Client\Domain\Client;
+use CoreAPI\Client\Domain\Entities\Client;
 use CoreAPI\Client\Domain\Repositories\ClientRepositoryInterface;
 use CoreAPI\Client\Domain\ValueObjects\ClientId;
 use CoreAPI\Client\Domain\ValueObjects\ClientName;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Persistence\ManagerRegistry;
 
-final class DoctrineClientRepository implements ClientRepositoryInterface
+final class DoctrineClientRepository extends ServiceEntityRepository implements ClientRepositoryInterface
 {
-    public function find(ClientId $id): ?Client
+    public function __construct(ManagerRegistry $registry)
     {
-        return $this->find($id);
+        parent::__construct($registry, Client::class);
+    }
+
+    public function findByClientId(ClientId $id): ?Client
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.id = :val')
+            ->setParameter('val', $id->value())
+            ->getQuery()
+            ->getOneOrNullResult();
     }
 
     public function findByCriteria(ClientName $clientName): ?Client

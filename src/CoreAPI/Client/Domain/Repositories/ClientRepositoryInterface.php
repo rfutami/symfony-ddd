@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace CoreAPI\Client\Domain\Repositories;
 
-use CoreAPI\Client\Domain\Client;
+use CoreAPI\Client\Domain\Entities\Client;
 use CoreAPI\Client\Domain\ValueObjects\ClientId;
 use CoreAPI\Client\Domain\ValueObjects\ClientName;
 
 interface ClientRepositoryInterface
 {
-    public function find(ClientId $id): ?Client;
+    public function findByClientId(ClientId $id): ?Client;
 
     public function findByCriteria(ClientName $clientName): ?Client;
 

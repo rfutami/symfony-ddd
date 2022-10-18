@@ -7,7 +7,7 @@ namespace CoreAPI\Client\Domain\Entities;
 use CoreAPI\Client\Domain\ValueObjects\ClientName;
 use CoreAPI\SharedKernel\AggregateRoot\AggregateRoot;
 
-final class Client/* extends AggregateRoot*/
+final class Client extends AggregateRoot
 {
     private $id;
     private $name;

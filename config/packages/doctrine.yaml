@@ -10,11 +10,11 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
         auto_mapping: true
         mappings:
-            CoreAPI\Client\Domain:
+            Client:
                 is_bundle: false
                 type: xml
                 dir: '%kernel.project_dir%/src/CoreAPI/Client/Infrastructure/DoctrineMappings'
-                prefix: 'CoreAPI\Client\Domain'
+                prefix: 'CoreAPI\Client\Domain\Entities'
                 alias: Client
 
 when@test:
