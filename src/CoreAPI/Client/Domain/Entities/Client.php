@@ -14,10 +14,8 @@ final class Client extends AggregateRoot
     private $name;
 
     public function __construct(
-        ClientId $id,
         ClientName $name
     ) {
-        $this->id = $id->value();
         $this->name = $name->value();
     }
 
@@ -32,11 +30,12 @@ final class Client extends AggregateRoot
     }
 
     public static function create(
-        ClientId $id,
         ClientName $name
     ): Client {
-        $client = new self($id, $name);
-        
+        // Get next available id
+        $client = new self($name);
+
+        // Lanzar evento de creación    
         return $client;
     }
 }

@@ -25,12 +25,13 @@ final class GetClientController extends AbstractController
         $id = new ClientId($client_id);
 
         $client = $this->repository->findByClientId($id);
-        var_dump($client);
-        return JsonResponse::fromJsonString(
-            json_encode([
+
+        return $this->json(
+            [
                 'id' => $client->id()->value(),
                 'name' => $client->name()->value(),
-            ]));
+            ]
+        );
     }
 }
 

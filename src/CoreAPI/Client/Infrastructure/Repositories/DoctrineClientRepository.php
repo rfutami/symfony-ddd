@@ -34,7 +34,8 @@ final class DoctrineClientRepository extends ServiceEntityRepository implements 
 
     public function save(Client $client): void
     {
-        
+        $this->_em->persist($client);
+        $this->_em->flush();
     }
 
     public function update(ClientId $id, Client $client): void
